@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    int i; // döngü için
+
+    printf("3 sayi giriniz:\n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    for (i = 0; i < 3; i++) {
+        if (a > b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        if (b > c) {
+            int temp = b;
+            b = c;
+            c = temp;
+        }
+    }
+
+    printf("Siralanmis sayilar: %d %d %d\n", a, b, c);
+
+    return 0;
+}

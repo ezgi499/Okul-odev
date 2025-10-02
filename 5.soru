@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int ogrenci, sinav;
+    int not;
+    float ortalama;
+
+    for (ogrenci = 1; ogrenci <= 5; ogrenci++) {
+        int toplam = 0;
+
+        printf("%d. ogrencinin notlarini giriniz:\n", ogrenci);
+
+        for (sinav = 1; sinav <= 4; sinav++) {
+            printf("%d. sinav notu: ", sinav);
+            scanf("%d", &not);
+
+             0-100 arası kontrol
+            if (not < 0 || not > 100) {
+                printf("Not 0-100 arasi olmali! Tekrar giriniz: ");
+                sinav--;
+                continue;
+            }
+
+            toplam += not;
+        }
+
+        ortalama = toplam / 4.0;
+
+        printf("%d. ogrencinin ortalamasi: %.2f -> ", ogrenci, ortalama);
+
+        // if-else ile durum belirleme
+        int durum;
+        if (ortalama < 50)
+            durum = 0; // kaldı
+        else
+            durum = 1; // geçti
+
+        // switch ile yazdırma
+        switch (durum) {
+            case 0:
+                printf("Kaldi\n");
+                break;
+            case 1:
+                printf("Gecti\n");
+                break;
+        }
+    }
+
+    return 0;
+}

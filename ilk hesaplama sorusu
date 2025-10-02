@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int sayi1, sayi2;
+
+    printf("Iki tam sayi giriniz: ");
+    scanf("%d %d", &sayi1, &sayi2);
+
+    printf("Toplam: %d\n", sayi1 + sayi2);
+    printf("Fark: %d\n", sayi1 - sayi2);
+    printf("Carpim: %d\n", sayi1 * sayi2);
+
+    if (sayi2 != 0) {
+        printf("Bolum: %d\n", sayi1 / sayi2);
+    } else {
+        printf("Bolme islemi tanimsiz (0'a bolunemez).\n");
+    }
+
+    return 0;
+}
